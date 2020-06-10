@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syg.ifmserver.dao.PsnInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.huichao.erp.entity.PsnInfo">
+        <id column="id" property="id" />
+        <result column="account" property="account" />
+        <result column="uesr_code" property="uesrCode" />
+        <result column="user_name" property="userName" />
+        <result column="user_passward" property="userPassward" />
+        <result column="email" property="email" />
+        <result column="phone" property="phone" />
+        <result column="dept_code" property="deptCode" />
+        <result column="superior_code" property="superiorCode" />
+        <result column="state" property="state" />
+        <result column="create_date" property="createDate" />
+        <result column="update_date" property="updateDate" />
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,64 @@
+server:
+  port: 8080
+spring:
+  application:
+    # TODO: 这里配置成实际工程的名字, 作为发布服务的ID.
+    name: ifm
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://62.234.163.169:3306/ifm_author?seUnicode=true&characterEncoding=UTF-8
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+db-config:
+  #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+  id-type: auto
+  #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+  field-strategy: not_empty
+  #驼峰下划线转换
+  column-underline: true
+    #数据库大写下划线转换
+    #capital-mode: true
+  #逻辑删除配置
+  logic-delete-value: 0
+  logic-not-delete-value: 1
+  db-type: mysql
+
+  refresh: true
+    #自定义填充策略接口实现
+    #meta-object-handler: com.kunchi.wms.xxx
+    #自定义SQL注入器
+  #sql-injector: com.kunchi.wms.xxx
+configuration:
+  map-underscore-to-camel-case: true
+
+# TODO: 请在这里填好工程swagger的入口标题,指向正确的负责人.
+ifm:
+  owner:
+    name: shaoyonggong
+    email: shaoyonggong@126.com
+  server:
+    title: ifm框架
+    version: 1.0.0
+mybatis-plus:
+  mapper-locations: classpath:/xml/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  #系统日志文件输出地址
+  path: ./logs
+  #系统日志输出级别
+  #sys系统输出将过滤器的日志级别配置为level
+  sys:
+    level: INFO
+  #console控制台打印日志将当日志级别等于或高于临界值时
+  console:
+    level: INFO
+  # 打印sql
+  level:
+    mapper: debug
+log:
+  enable: true
+
+timeoutTime: 9000000
