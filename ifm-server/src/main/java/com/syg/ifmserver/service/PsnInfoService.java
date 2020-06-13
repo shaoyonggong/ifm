@@ -1,7 +1,9 @@
 package com.syg.ifmserver.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.syg.ifmapi.po.PsnInfoPo;
+import com.syg.ifmserver.po.PsnInfoPo;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +15,5 @@ import com.syg.ifmapi.po.PsnInfoPo;
  */
 public interface PsnInfoService extends IService<PsnInfoPo> {
 
+    List<PsnInfoPo> searchList(String str);
 }

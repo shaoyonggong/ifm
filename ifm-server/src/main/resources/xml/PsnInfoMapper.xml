@@ -3,10 +3,10 @@
 <mapper namespace="com.syg.ifmserver.dao.PsnInfoMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.huichao.erp.entity.PsnInfo">
+    <resultMap id="BaseResultMap" type="com.syg.ifmserver.po.PsnInfoPo">
         <id column="id" property="id" />
         <result column="account" property="account" />
-        <result column="uesr_code" property="uesrCode" />
+        <result column="user_code" property="userCode" />
         <result column="user_name" property="userName" />
         <result column="user_passward" property="userPassward" />
         <result column="email" property="email" />
@@ -17,5 +17,9 @@
         <result column="create_date" property="createDate" />
         <result column="update_date" property="updateDate" />
     </resultMap>
+    <select id="searchList" resultType="com.syg.ifmserver.po.PsnInfoPo">
+        select * from psn_info limit 100
+    </select>
+
 
 </mapper>

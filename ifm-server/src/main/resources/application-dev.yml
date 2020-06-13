@@ -40,8 +40,9 @@ ifm:
   server:
     title: ifm框架
     version: 1.0.0
-mybatis-plus:
-  mapper-locations: classpath:/xml/*Mapper.xml
+mybatis:
+  mapper-locations: classpath*:/xml/*Mapper.xml
+  type-aliases-package: com.syg.ifmserver.po
   configuration:
     map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
@@ -58,6 +59,12 @@ logging:
   # 打印sql
   level:
     mapper: debug
+    io:
+    swagger:
+       models:
+          parameters:
+            AbstractSerializableParameter:
+              ERROR
 log:
   enable: true
 
