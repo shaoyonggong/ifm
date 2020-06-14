@@ -6,6 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import javax.annotation.PostConstruct;
+import java.util.TimeZone;
+
 /**
  * @author shaoyonggong
  * @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
@@ -15,6 +18,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @EnableSwagger2
 public class IfmServerApplication {
+
+    @PostConstruct
+    void started(){
+        System.setProperty("user.timezone","Asia/Beijing");
+        TimeZone.setDefault(TimeZone.getTimeZone("Asia/Beijing"));
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(IfmServerApplication.class, args);
